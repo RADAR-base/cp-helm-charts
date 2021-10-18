@@ -1,0 +1,78 @@
+apiVersion: v1
+entries:
+  cp-control-center:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2021-10-18T15:11:10.58294726Z"
+    description: A Helm chart Confluent Control Center for Kubernetes
+    digest: bf17a73c1230d459e19f642e16b96254d099ff29d20e631715fd785bd3c453f9
+    name: cp-control-center
+    urls:
+    - https://github.com/RADAR-base/cp-helm-charts/releases/download/cp-control-center-0.1.0/cp-control-center-0.1.0.tgz
+    version: 0.1.0
+  cp-kafka:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2021-10-18T15:11:10.76116233Z"
+    dependencies:
+    - condition: cp-zookeeper.enabled
+      name: cp-zookeeper
+      repository: file://../cp-zookeeper
+      version: 0.1.0
+    description: A Helm chart for Confluent Kafka on Kubernetes
+    digest: 1ea4765742a985f9d5d553c1f964bf302f030b3a444b558bbaf849d8dc43b1a9
+    name: cp-kafka
+    urls:
+    - https://github.com/RADAR-base/cp-helm-charts/releases/download/cp-kafka-0.1.0/cp-kafka-0.1.0.tgz
+    version: 0.1.0
+  cp-kafka-connect:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2021-10-18T15:11:10.961603892Z"
+    description: A Helm chart for Confluent Kafka Connect on Kubernetes
+    digest: 1b874563b8d95c7906bb733b2373baf9a851795d8d8e7c48ff0d906469431231
+    name: cp-kafka-connect
+    urls:
+    - https://github.com/RADAR-base/cp-helm-charts/releases/download/cp-kafka-connect-0.1.1/cp-kafka-connect-0.1.1.tgz
+    version: 0.1.1
+  cp-kafka-rest:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2021-10-18T15:11:11.178521235Z"
+    description: A Helm chart for Confluent Kafka REST Proxy on Kubernetes
+    digest: a9ec41ef380a3771e6bf4280b22744345b8cb64a732e5ba68a5c1dc690216e3b
+    name: cp-kafka-rest
+    urls:
+    - https://github.com/RADAR-base/cp-helm-charts/releases/download/cp-kafka-rest-0.1.1/cp-kafka-rest-0.1.1.tgz
+    version: 0.1.1
+  cp-ksql-server:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2021-10-18T15:11:11.349897114Z"
+    description: A Helm chart for Confluent KSQL Server on Kubernetes
+    digest: 1276591e65d52e94d5d95893c1a25916040b82df28b1fe9fd5d176e4761f50b6
+    name: cp-ksql-server
+    urls:
+    - https://github.com/RADAR-base/cp-helm-charts/releases/download/cp-ksql-server-0.1.0/cp-ksql-server-0.1.0.tgz
+    version: 0.1.0
+  cp-schema-registry:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2021-10-18T15:11:11.537352646Z"
+    description: A Helm chart for Confluent Schema Registry on Kubernetes
+    digest: 8f416b6bd71739f12cbd348ff588aba460c03d00b92559243b52e8885905c6ba
+    name: cp-schema-registry
+    urls:
+    - https://github.com/RADAR-base/cp-helm-charts/releases/download/cp-schema-registry-0.1.1/cp-schema-registry-0.1.1.tgz
+    version: 0.1.1
+  cp-zookeeper:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2021-10-18T15:11:11.710712767Z"
+    description: A Helm chart for Confluent Zookeeper on Kubernetes
+    digest: 74a2ebe45b64b47d3d1997fbb47553d944974176bdf3bcb04dc8e6f5a7799af7
+    name: cp-zookeeper
+    urls:
+    - https://github.com/RADAR-base/cp-helm-charts/releases/download/cp-zookeeper-0.1.0/cp-zookeeper-0.1.0.tgz
+    version: 0.1.0
+generated: "2021-10-18T15:11:11.710720868Z"
