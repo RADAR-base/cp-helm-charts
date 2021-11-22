@@ -21,6 +21,15 @@ entries:
     version: 0.1.0
   cp-kafka:
   - apiVersion: v1
+    appVersion: 6.1.0
+    created: "2021-11-22T08:29:49.839851358Z"
+    description: A Helm chart for Confluent Kafka on Kubernetes
+    digest: d40ff60f8a7b5d618b3eb387f07a7724fad21131dfaaffa28dcdff0f2c4a5056
+    name: cp-kafka
+    urls:
+    - https://github.com/RADAR-base/cp-helm-charts/releases/download/cp-kafka-0.2.0/cp-kafka-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v1
     appVersion: "1.0"
     created: "2021-10-18T15:11:10.76116233Z"
     dependencies:
@@ -129,4 +138,4 @@ entries:
     urls:
     - https://github.com/RADAR-base/cp-helm-charts/releases/download/cp-zookeeper-0.1.0/cp-zookeeper-0.1.0.tgz
     version: 0.1.0
-generated: "2021-11-22T08:26:21.789813474Z"
+generated: "2021-11-22T08:29:50.806337489Z"
