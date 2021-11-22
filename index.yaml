@@ -2,6 +2,15 @@ apiVersion: v1
 entries:
   cp-control-center:
   - apiVersion: v1
+    appVersion: 6.1.0
+    created: "2021-11-22T08:26:20.972606093Z"
+    description: A Helm chart Confluent Control Center for Kubernetes
+    digest: dc812a55d82197d484c5c3afd317e539b67006f295d3258a964c5a3ded517a5f
+    name: cp-control-center
+    urls:
+    - https://github.com/RADAR-base/cp-helm-charts/releases/download/cp-control-center-0.2.0/cp-control-center-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v1
     appVersion: "1.0"
     created: "2021-10-18T15:11:10.58294726Z"
     description: A Helm chart Confluent Control Center for Kubernetes
@@ -27,6 +36,15 @@ entries:
     version: 0.1.0
   cp-kafka-connect:
   - apiVersion: v1
+    appVersion: 6.1.0
+    created: "2021-11-22T08:26:21.153209629Z"
+    description: A Helm chart for Confluent Kafka Connect on Kubernetes
+    digest: 2f1ad8ea57e34642c705e57cbbb16222b9ca5a86e3baa1aada6562c06488357b
+    name: cp-kafka-connect
+    urls:
+    - https://github.com/RADAR-base/cp-helm-charts/releases/download/cp-kafka-connect-0.2.0/cp-kafka-connect-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v1
     appVersion: "1.0"
     created: "2021-10-18T15:11:10.961603892Z"
     description: A Helm chart for Confluent Kafka Connect on Kubernetes
@@ -36,6 +54,15 @@ entries:
     - https://github.com/RADAR-base/cp-helm-charts/releases/download/cp-kafka-connect-0.1.1/cp-kafka-connect-0.1.1.tgz
     version: 0.1.1
   cp-kafka-rest:
+  - apiVersion: v1
+    appVersion: 6.1.0
+    created: "2021-11-22T08:26:21.309541987Z"
+    description: A Helm chart for Confluent Kafka REST Proxy on Kubernetes
+    digest: 835049b36704ef725c226ca23955f15915f72333e46b3cc7bb0fee6645eebb22
+    name: cp-kafka-rest
+    urls:
+    - https://github.com/RADAR-base/cp-helm-charts/releases/download/cp-kafka-rest-0.2.0/cp-kafka-rest-0.2.0.tgz
+    version: 0.2.0
   - apiVersion: v1
     appVersion: "1.0"
     created: "2021-10-18T15:11:11.178521235Z"
@@ -47,6 +74,15 @@ entries:
     version: 0.1.1
   cp-ksql-server:
   - apiVersion: v1
+    appVersion: 6.1.0
+    created: "2021-11-22T08:26:21.467137045Z"
+    description: A Helm chart for Confluent KSQL Server on Kubernetes
+    digest: 363fda483ae8727e1bba3025c8da1e6e77bdc927c8efc17a11e0fe5b407b1df7
+    name: cp-ksql-server
+    urls:
+    - https://github.com/RADAR-base/cp-helm-charts/releases/download/cp-ksql-server-0.2.0/cp-ksql-server-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v1
     appVersion: "1.0"
     created: "2021-10-18T15:11:11.349897114Z"
     description: A Helm chart for Confluent KSQL Server on Kubernetes
@@ -56,6 +92,15 @@ entries:
     - https://github.com/RADAR-base/cp-helm-charts/releases/download/cp-ksql-server-0.1.0/cp-ksql-server-0.1.0.tgz
     version: 0.1.0
   cp-schema-registry:
+  - apiVersion: v1
+    appVersion: 6.1.0
+    created: "2021-11-22T08:26:21.625382608Z"
+    description: A Helm chart for Confluent Schema Registry on Kubernetes
+    digest: 96d4f3e463cfdda1ce80334b02cb9f8bf275c19c2147d5c98eb2564113c6ceb5
+    name: cp-schema-registry
+    urls:
+    - https://github.com/RADAR-base/cp-helm-charts/releases/download/cp-schema-registry-0.2.0/cp-schema-registry-0.2.0.tgz
+    version: 0.2.0
   - apiVersion: v1
     appVersion: "1.0"
     created: "2021-10-18T15:11:11.537352646Z"
@@ -67,6 +112,15 @@ entries:
     version: 0.1.1
   cp-zookeeper:
   - apiVersion: v1
+    appVersion: 6.1.0
+    created: "2021-11-22T08:26:21.789790874Z"
+    description: A Helm chart for Confluent Zookeeper on Kubernetes
+    digest: 1536d42f062982f46eb7ab689bcd97be016a93ceb9cbff2546862d2cda565c2b
+    name: cp-zookeeper
+    urls:
+    - https://github.com/RADAR-base/cp-helm-charts/releases/download/cp-zookeeper-0.2.0/cp-zookeeper-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v1
     appVersion: "1.0"
     created: "2021-10-18T15:11:11.710712767Z"
     description: A Helm chart for Confluent Zookeeper on Kubernetes
@@ -75,4 +129,4 @@ entries:
     urls:
     - https://github.com/RADAR-base/cp-helm-charts/releases/download/cp-zookeeper-0.1.0/cp-zookeeper-0.1.0.tgz
     version: 0.1.0
-generated: "2021-10-18T15:11:11.710720868Z"
+generated: "2021-11-22T08:26:21.789813474Z"
