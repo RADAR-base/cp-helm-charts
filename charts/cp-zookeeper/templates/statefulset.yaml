@@ -130,6 +130,8 @@ spec:
         env:
         - name : KAFKA_HEAP_OPTS
           value: "{{ .Values.heapOptions }}"
+        - name : KAFKA_OPTS
+          value: "{{ .Values.kafkaOpts }}"
         {{- if .Values.jmx.port }}
         - name : KAFKA_JMX_PORT
           value: "{{ .Values.jmx.port }}"
@@ -169,6 +171,21 @@ spec:
           mountPath: /var/lib/zookeeper/data
         - name: datalogdir
           mountPath: /var/lib/zookeeper/log
+      initContainers:
+        {{- if and .Values.initChownData.enabled .Values.persistence.enabled }}
+        - name: init-chown-data
+          image: {{ .Values.initChownData.image.repository }}:{{ .Values.initChownData.image.tag }}
+          imagePullPolicy: {{ .Values.initChownData.image.pullPolicy }}
+          command:
+            - sh
+            - -c
+            - "u=$(stat -c \"%u\" /var/lib/zookeeper/data/myid); if [ $u != {{ .Values.initChownData.uid }} ] && [ $u != 65534 ]; then chown -R {{ .Values.initChownData.uid }} /var/lib/zookeeper/data /var/lib/zookeeper/log; fi"
+          volumeMounts:
+            - name: datadir
+              mountPath: /var/lib/zookeeper/data
+            - name: datalogdir
+              mountPath: /var/lib/zookeeper/log
+        {{- end }}
       {{- if .Values.imagePullSecrets }}
       imagePullSecrets:
 {{ toYaml .Values.imagePullSecrets | indent 8 }}

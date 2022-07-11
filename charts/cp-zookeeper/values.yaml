@@ -52,6 +52,7 @@ maxClientCnxns: 60
 autoPurgeSnapRetainCount: 3
 autoPurgePurgeInterval: 24
 
+kafkaOpts: "-Dzookeeper.4lw.commands.whitelist=ruok"
 ## Zookeeper JVM Heap Option
 heapOptions: "-Xms512M -Xmx512M"
 
@@ -77,6 +78,13 @@ persistence:
   dataLogDirSize: 5Gi
   # dataLogDirStorageClass: ""
 
+initChownData:
+  enabled: false
+  image:
+    repository: busybox
+    tag: 1.35.0
+    pullPolicy: IfNotPresent
+  uid: 1000
 
 ## Pod Compute Resources
 ## ref: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/

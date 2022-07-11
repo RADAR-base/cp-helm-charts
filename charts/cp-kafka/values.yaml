@@ -82,6 +82,14 @@ persistence:
 
   disksPerBroker: 1
 
+initChownData:
+  enabled: false
+  image:
+    repository: busybox
+    tag: 1.35.0
+    pullPolicy: IfNotPresent
+  uid: 1000
+
 ## Kafka JVM Heap Option
 heapOptions: "-Xms512M -Xmx512M"
 
