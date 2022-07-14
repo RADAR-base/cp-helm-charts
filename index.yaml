@@ -20,6 +20,15 @@ entries:
     - https://github.com/RADAR-base/cp-helm-charts/releases/download/cp-control-center-0.1.0/cp-control-center-0.1.0.tgz
     version: 0.1.0
   cp-kafka:
+  - apiVersion: v2
+    appVersion: 7.2.0
+    created: "2022-07-14T07:29:26.049116321Z"
+    description: A Helm chart for Confluent Kafka on Kubernetes
+    digest: fc5d60ed779b3d274cfd08b170d504abb61ef401c8baf8fb965456e78f743caf
+    name: cp-kafka
+    urls:
+    - https://github.com/RADAR-base/cp-helm-charts/releases/download/cp-kafka-0.3.0/cp-kafka-0.3.0.tgz
+    version: 0.3.0
   - apiVersion: v1
     appVersion: 6.1.0
     created: "2021-11-22T08:29:49.839851358Z"
@@ -82,6 +91,15 @@ entries:
     - https://github.com/RADAR-base/cp-helm-charts/releases/download/cp-kafka-rest-0.1.1/cp-kafka-rest-0.1.1.tgz
     version: 0.1.1
   cp-ksql-server:
+  - apiVersion: v2
+    appVersion: 7.2.0
+    created: "2022-07-14T07:29:26.227715597Z"
+    description: A Helm chart for Confluent KSQL Server on Kubernetes
+    digest: 188f1f6d92f51d99131bc4a1be146cb1c4f2891483e6b7f508de1919a51331e8
+    name: cp-ksql-server
+    urls:
+    - https://github.com/RADAR-base/cp-helm-charts/releases/download/cp-ksql-server-0.3.0/cp-ksql-server-0.3.0.tgz
+    version: 0.3.0
   - apiVersion: v1
     appVersion: 6.1.0
     created: "2021-11-22T08:26:21.467137045Z"
@@ -102,6 +120,15 @@ entries:
     version: 0.1.0
   cp-schema-registry:
   - apiVersion: v1
+    appVersion: 7.2.0
+    created: "2022-07-14T07:29:26.402663092Z"
+    description: A Helm chart for Confluent Schema Registry on Kubernetes
+    digest: ab919e003988b29f2ea4fdae075d629eb5db1949b5df6efd6f08d9515b9f43d4
+    name: cp-schema-registry
+    urls:
+    - https://github.com/RADAR-base/cp-helm-charts/releases/download/cp-schema-registry-0.3.0/cp-schema-registry-0.3.0.tgz
+    version: 0.3.0
+  - apiVersion: v1
     appVersion: 6.1.0
     created: "2021-11-22T08:26:21.625382608Z"
     description: A Helm chart for Confluent Schema Registry on Kubernetes
@@ -120,6 +147,15 @@ entries:
     - https://github.com/RADAR-base/cp-helm-charts/releases/download/cp-schema-registry-0.1.1/cp-schema-registry-0.1.1.tgz
     version: 0.1.1
   cp-zookeeper:
+  - apiVersion: v2
+    appVersion: 7.2.0
+    created: "2022-07-14T07:29:26.641724756Z"
+    description: A Helm chart for Confluent Zookeeper on Kubernetes
+    digest: e934f83db821ae968b2d32e9df40e38ada51497d24ef6c02737da9e1d4c909f0
+    name: cp-zookeeper
+    urls:
+    - https://github.com/RADAR-base/cp-helm-charts/releases/download/cp-zookeeper-0.3.0/cp-zookeeper-0.3.0.tgz
+    version: 0.3.0
   - apiVersion: v1
     appVersion: 6.1.0
     created: "2021-11-22T08:26:21.789790874Z"
@@ -138,4 +174,4 @@ entries:
     urls:
     - https://github.com/RADAR-base/cp-helm-charts/releases/download/cp-zookeeper-0.1.0/cp-zookeeper-0.1.0.tgz
     version: 0.1.0
-generated: "2021-11-22T08:29:50.806337489Z"
+generated: "2022-07-14T07:29:26.641768556Z"
