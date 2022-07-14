@@ -1,3 +1,5 @@
+{{- $disksPerBroker := .Values.persistence.disksPerBroker | int }}
+{{- $persistenceEnabled := and .Values.persistence.enabled (gt $disksPerBroker 0) }}
 {{- if .Capabilities.APIVersions.Has "apps/v1" }}
 apiVersion: apps/v1
 {{- else }}
@@ -94,7 +96,7 @@ spec:
             command:
               - sh
               - -ec
-              - /usr/bin/jps | /bin/grep -q SupportedKafka
+              - /usr/bin/jps | /bin/grep -q Kafka
           {{- if not .Values.livenessProbe }}
           initialDelaySeconds: 30
           timeoutSeconds: 5
@@ -183,15 +185,29 @@ spec:
         - -exc
         - |
           export KAFKA_BROKER_ID=${HOSTNAME##*-} && \
-          export KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://${POD_NAME}.{{ template "cp-kafka.fullname" . }}-headless.${POD_NAMESPACE}:9092{{ include "cp-kafka.configuration.advertised.listeners" . }} && \
+          export KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://${POD_NAME}.{{ template "cp-kafka.fullname" . }}-headless.${POD_NAMESPACE}.svc.cluster.local:9092{{ include "cp-kafka.configuration.advertised.listeners" . }} && \
           exec /etc/confluent/docker/run
         volumeMounts:
-        {{- if .Values.persistence.enabled }}
-          {{- $disksPerBroker := .Values.persistence.disksPerBroker | int }}
-          {{- range $k, $e := until $disksPerBroker }}
-          - name: datadir-{{$k}}
-            mountPath: /opt/kafka/data-{{$k}}
+          {{- if $persistenceEnabled }}
+            {{- range $k, $e := until $disksPerBroker }}
+            - name: datadir-{{$k}}
+              mountPath: /opt/kafka/data-{{$k}}
+            {{- end }}
           {{- end }}
+      initContainers:
+        {{- if and .Values.initChownData.enabled $persistenceEnabled }}
+        - name: init-chown-data
+          image: {{ .Values.initChownData.image.repository }}:{{ .Values.initChownData.image.tag }}
+          imagePullPolicy: {{ .Values.initChownData.image.pullPolicy }}
+          command:
+            - sh
+            - -c
+            - "for d in /opt/kafka/data-*; do u=$(stat -c \"%u\" $d/logs); if [ $u != {{ .Values.initChownData.uid }} ] && [ $u != 65534 ]; then chown -R {{ .Values.initChownData.uid }} $d; fi; done"
+          volumeMounts:
+            {{- range $k, $e := until $disksPerBroker }}
+            - name: datadir-{{$k}}
+              mountPath: /opt/kafka/data-{{$k}}
+            {{- end }}
         {{- end }}
       {{- if .Values.imagePullSecrets }}
       imagePullSecrets:

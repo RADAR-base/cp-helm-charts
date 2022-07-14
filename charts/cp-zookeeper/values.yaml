@@ -15,7 +15,7 @@ servers: 3
 ## Images Info
 ## ref: https://hub.docker.com/r/confluentinc/cp-zookeeper/
 image: confluentinc/cp-zookeeper
-imageTag: 6.1.0
+imageTag: 7.2.0
 
 ## Specify a imagePullPolicy
 ## ref: http://kubernetes.io/docs/user-guide/images/#pre-pulling-images
@@ -52,6 +52,7 @@ maxClientCnxns: 60
 autoPurgeSnapRetainCount: 3
 autoPurgePurgeInterval: 24
 
+kafkaOpts: "-Dzookeeper.4lw.commands.whitelist=ruok"
 ## Zookeeper JVM Heap Option
 heapOptions: "-Xms512M -Xmx512M"
 
@@ -77,6 +78,13 @@ persistence:
   dataLogDirSize: 5Gi
   # dataLogDirStorageClass: ""
 
+initChownData:
+  enabled: false
+  image:
+    repository: busybox
+    tag: 1.35.0
+    pullPolicy: IfNotPresent
+  uid: 1000
 
 ## Pod Compute Resources
 ## ref: https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/

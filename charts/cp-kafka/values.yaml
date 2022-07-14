@@ -12,7 +12,7 @@ brokers: 3
 ## Image Info
 ## ref: https://hub.docker.com/r/confluentinc/cp-server/
 image: confluentinc/cp-server
-imageTag: 6.1.0
+imageTag: 7.2.0
 
 ## Specify a imagePullPolicy
 ## ref: http://kubernetes.io/docs/user-guide/images/#pre-pulling-images
@@ -81,6 +81,14 @@ persistence:
   # storageClass: ""
 
   disksPerBroker: 1
+
+initChownData:
+  enabled: false
+  image:
+    repository: busybox
+    tag: 1.35.0
+    pullPolicy: IfNotPresent
+  uid: 1000
 
 ## Kafka JVM Heap Option
 heapOptions: "-Xms512M -Xmx512M"
