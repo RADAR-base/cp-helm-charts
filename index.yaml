@@ -149,6 +149,15 @@ entries:
   cp-zookeeper:
   - apiVersion: v2
     appVersion: 7.2.0
+    created: "2022-07-18T09:12:52.640800558Z"
+    description: A Helm chart for Confluent Zookeeper on Kubernetes
+    digest: 24334e30d0b797c30469521591f64952e5ad1f5141c5375b2ecfa48d9edae676
+    name: cp-zookeeper
+    urls:
+    - https://github.com/RADAR-base/cp-helm-charts/releases/download/cp-zookeeper-0.3.1/cp-zookeeper-0.3.1.tgz
+    version: 0.3.1
+  - apiVersion: v2
+    appVersion: 7.2.0
     created: "2022-07-14T07:29:26.641724756Z"
     description: A Helm chart for Confluent Zookeeper on Kubernetes
     digest: e934f83db821ae968b2d32e9df40e38ada51497d24ef6c02737da9e1d4c909f0
@@ -174,4 +183,4 @@ entries:
     urls:
     - https://github.com/RADAR-base/cp-helm-charts/releases/download/cp-zookeeper-0.1.0/cp-zookeeper-0.1.0.tgz
     version: 0.1.0
-generated: "2022-07-14T07:29:26.641768556Z"
+generated: "2022-07-18T09:12:52.64083616Z"
