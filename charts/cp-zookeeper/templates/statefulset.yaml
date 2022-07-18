@@ -131,7 +131,10 @@ spec:
         - name : KAFKA_HEAP_OPTS
           value: "{{ .Values.heapOptions }}"
         - name : KAFKA_OPTS
-          value: "{{ .Values.kafkaOpts }}"
+          value: "{{ .Values.kafkaOpts }}
+            {{- if .Values.whitelistCommands }} -Dzookeeper.4lw.commands.whitelist={{ join "," .Values.whitelistCommands }}{{- end -}}
+            {{- if .Values.zookeeperSnapshotTrustEmpty }} -Dzookeeper.snapshot.trust.empty=true{{- end -}}
+            "
         {{- if .Values.jmx.port }}
         - name : KAFKA_JMX_PORT
           value: "{{ .Values.jmx.port }}"

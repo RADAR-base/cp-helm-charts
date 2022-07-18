@@ -52,7 +52,15 @@ maxClientCnxns: 60
 autoPurgeSnapRetainCount: 3
 autoPurgePurgeInterval: 24
 
-kafkaOpts: "-Dzookeeper.4lw.commands.whitelist=ruok"
+# Set to true if zookeeper (erroneously) crashes because it can find the logs but not the snapshot
+zookeeperSnapshotTrustEmpty: false
+
+# At least `ruok` is needed to enable health check. Other commands can be added as needed.
+whitelistCommands:
+  - ruok
+
+# Additional options to the zookeeper runtime command.
+kafkaOpts: ""
 ## Zookeeper JVM Heap Option
 heapOptions: "-Xms512M -Xmx512M"
 
