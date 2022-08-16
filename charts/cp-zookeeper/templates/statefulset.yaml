@@ -182,7 +182,7 @@ spec:
           command:
             - sh
             - -c
-            - "u=$(stat -c \"%u\" /var/lib/zookeeper/data/myid); if [ $u != {{ .Values.initChownData.uid }} ] && [ $u != 65534 ]; then chown -R {{ .Values.initChownData.uid }} /var/lib/zookeeper/data /var/lib/zookeeper/log; fi"
+            - if [ ! -e /var/lib/zookeeper/data/myid ] || [ "$(stat -c '%u' /var/lib/zookeeper/data/myid)" != {{ .Values.initChownData.uid }} ]; then chown -R {{ .Values.initChownData.uid }} /var/lib/zookeeper/data /var/lib/zookeeper/log; fi
           volumeMounts:
             - name: datadir
               mountPath: /var/lib/zookeeper/data
