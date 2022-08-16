@@ -202,7 +202,7 @@ spec:
           command:
             - sh
             - -c
-            - "for d in /opt/kafka/data-*; do u=$(stat -c \"%u\" $d/logs); if [ $u != {{ .Values.initChownData.uid }} ] && [ $u != 65534 ]; then chown -R {{ .Values.initChownData.uid }} $d; fi; done"
+            - for d in /opt/kafka/data-*; do if [ ! -e $d/logs ] || [ "$(stat -c %u $d/logs)" != {{ .Values.initChownData.uid }} ]; then chown -R {{ .Values.initChownData.uid }} $d; fi; done
           volumeMounts:
             {{- range $k, $e := until $disksPerBroker }}
             - name: datadir-{{$k}}
