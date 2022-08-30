@@ -24,6 +24,12 @@ spec:
         release: {{ .Release.Name }}
       {{- if or .Values.podAnnotations .Values.prometheus.jmx.enabled }}
       annotations:
+        {{- if .Values.ksql.headless }}
+        checksum/ksql-queries-configmap: {{ include (print $.Template.BasePath "/ksql-queries-configmap.yaml") . | sha256sum }}
+        {{- end }}
+        {{- if .Values.prometheus.jmx.enabled }}
+        checksum/jmx-configmap: {{ include (print $.Template.BasePath "/jmx-configmap.yaml") . | sha256sum }}
+        {{- end }}
       {{- range $key, $value := .Values.podAnnotations }}
         {{ $key }}: {{ $value | quote }}
       {{- end }}

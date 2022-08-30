@@ -8,8 +8,7 @@ metadata:
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
 data:
-  {{- $files := .Files }}
-  {{- range tuple "queries.sql" }}
-  {{ . }}: |-
-{{ $files.Get . | indent 4 }}
+  {{- if .Values.ksql.queries }}
+  queries.sql: |
+    {{- .Values.ksql.queries | nindent 4 }}
   {{- end }}

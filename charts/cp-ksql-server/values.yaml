@@ -84,6 +84,10 @@ external:
 ## ref: https://docs.confluent.io/current/ksql/docs/installation/server-config/index.html
 ksql:
   headless: true
+  queries: {}
+  # pageviews.sql: |
+  #   CREATE STREAM pageviews_original (viewtime bigint, userid varchar, pageid varchar)
+  #       WITH (kafka_topic='pageviews', value_format='DELIMITED');
 
 ## You can list load balanced service endpoint, or list of all brokers (which is hard in K8s).  e.g.:
 ## bootstrapServers: "PLAINTEXT://dozing-prawn-kafka-headless:9092"
