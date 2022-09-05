@@ -7,7 +7,7 @@ replicaCount: 1
 ## Image Info
 ## ref: https://hub.docker.com/r/confluentinc/cp-ksql-server/
 image: confluentinc/cp-ksqldb-server
-imageTag: 7.2.0
+imageTag: 7.2.1
 
 ## Specify a imagePullPolicy
 ## ref: http://kubernetes.io/docs/user-guide/images/#pre-pulling-images
@@ -84,6 +84,11 @@ external:
 ## ref: https://docs.confluent.io/current/ksql/docs/installation/server-config/index.html
 ksql:
   headless: true
+  queries: ""
+  # For example:
+  # queries: |
+  #   CREATE STREAM pageviews_original (viewtime bigint, userid varchar, pageid varchar)
+  #       WITH (kafka_topic='pageviews', value_format='DELIMITED');
 
 ## You can list load balanced service endpoint, or list of all brokers (which is hard in K8s).  e.g.:
 ## bootstrapServers: "PLAINTEXT://dozing-prawn-kafka-headless:9092"
