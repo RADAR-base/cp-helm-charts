@@ -2,4 +2,4 @@ apiVersion: v2
 appVersion: "7.2.1"
 description: A Helm chart for Confluent Zookeeper on Kubernetes
 name: cp-zookeeper
-version: 0.3.2
+version: 0.3.3
