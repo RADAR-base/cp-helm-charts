@@ -98,6 +98,7 @@ prometheus:
 
 ingress:
   enabled: false
+  ingressClassName: nginx
   annotations: {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
