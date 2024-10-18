@@ -2,6 +2,15 @@ apiVersion: v1
 entries:
   cp-control-center:
   - apiVersion: v1
+    appVersion: 7.2.9
+    created: "2024-10-18T12:34:49.731751949Z"
+    description: A Helm chart Confluent Control Center for Kubernetes
+    digest: 776fafca8048e0a2975bb13a5eed45934b09bf0814443c62134559b26dc56c2d
+    name: cp-control-center
+    urls:
+    - https://github.com/RADAR-base/cp-helm-charts/releases/download/cp-control-center-0.2.1/cp-control-center-0.2.1.tgz
+    version: 0.2.1
+  - apiVersion: v1
     appVersion: 6.1.0
     created: "2021-11-22T08:26:20.972606093Z"
     description: A Helm chart Confluent Control Center for Kubernetes
@@ -20,6 +29,15 @@ entries:
     - https://github.com/RADAR-base/cp-helm-charts/releases/download/cp-control-center-0.1.0/cp-control-center-0.1.0.tgz
     version: 0.1.0
   cp-kafka:
+  - apiVersion: v2
+    appVersion: 7.2.1
+    created: "2024-10-18T12:34:49.92380387Z"
+    description: A Helm chart for Confluent Kafka on Kubernetes
+    digest: 084ac40f2370870f70eb6821ec622d522388940beb0c4676bdcf60f7adce2dd0
+    name: cp-kafka
+    urls:
+    - https://github.com/RADAR-base/cp-helm-charts/releases/download/cp-kafka-0.3.3/cp-kafka-0.3.3.tgz
+    version: 0.3.3
   - apiVersion: v2
     appVersion: 7.2.1
     created: "2022-10-25T11:06:10.287246258Z"
@@ -72,6 +90,15 @@ entries:
     version: 0.1.0
   cp-kafka-connect:
   - apiVersion: v1
+    appVersion: 7.2.9
+    created: "2024-10-18T12:34:50.182302087Z"
+    description: A Helm chart for Confluent Kafka Connect on Kubernetes
+    digest: 3d2066f495459482d248d322ef6356190ea227d14da437191ec95b935901c1a8
+    name: cp-kafka-connect
+    urls:
+    - https://github.com/RADAR-base/cp-helm-charts/releases/download/cp-kafka-connect-0.2.1/cp-kafka-connect-0.2.1.tgz
+    version: 0.2.1
+  - apiVersion: v1
     appVersion: 6.1.0
     created: "2021-11-22T08:26:21.153209629Z"
     description: A Helm chart for Confluent Kafka Connect on Kubernetes
@@ -91,6 +118,15 @@ entries:
     version: 0.1.1
   cp-kafka-rest:
   - apiVersion: v1
+    appVersion: 7.2.9
+    created: "2024-10-18T12:34:50.351184633Z"
+    description: A Helm chart for Confluent Kafka REST Proxy on Kubernetes
+    digest: 629636ea4f8451783ae5368f723114ed186f8d0d717aef9cef5099a7cf2e8b26
+    name: cp-kafka-rest
+    urls:
+    - https://github.com/RADAR-base/cp-helm-charts/releases/download/cp-kafka-rest-0.2.1/cp-kafka-rest-0.2.1.tgz
+    version: 0.2.1
+  - apiVersion: v1
     appVersion: 6.1.0
     created: "2021-11-22T08:26:21.309541987Z"
     description: A Helm chart for Confluent Kafka REST Proxy on Kubernetes
@@ -109,6 +145,15 @@ entries:
     - https://github.com/RADAR-base/cp-helm-charts/releases/download/cp-kafka-rest-0.1.1/cp-kafka-rest-0.1.1.tgz
     version: 0.1.1
   cp-ksql-server:
+  - apiVersion: v2
+    appVersion: 7.2.1
+    created: "2024-10-18T12:34:50.549459737Z"
+    description: A Helm chart for Confluent KSQL Server on Kubernetes
+    digest: cd721962b81de4fa35ad8d42a35a099239f4217b320dffc5fddcd372147e94f6
+    name: cp-ksql-server
+    urls:
+    - https://github.com/RADAR-base/cp-helm-charts/releases/download/cp-ksql-server-0.3.2/cp-ksql-server-0.3.2.tgz
+    version: 0.3.2
   - apiVersion: v2
     appVersion: 7.2.1
     created: "2022-09-05T12:46:55.551283957Z"
@@ -184,6 +229,15 @@ entries:
     version: 0.1.1
   cp-zookeeper:
   - apiVersion: v2
+    appVersion: 7.2.9
+    created: "2024-10-18T12:34:50.912065144Z"
+    description: A Helm chart for Confluent Zookeeper on Kubernetes
+    digest: aa36eaec4f57ed5222d4b4122396b5234b5f4444cd945ed11f664a684ba6955d
+    name: cp-zookeeper
+    urls:
+    - https://github.com/RADAR-base/cp-helm-charts/releases/download/cp-zookeeper-0.3.4/cp-zookeeper-0.3.4.tgz
+    version: 0.3.4
+  - apiVersion: v2
     appVersion: 7.2.1
     created: "2022-10-25T11:06:10.446782612Z"
     description: A Helm chart for Confluent Zookeeper on Kubernetes
@@ -237,4 +291,4 @@ entries:
     urls:
     - https://github.com/RADAR-base/cp-helm-charts/releases/download/cp-zookeeper-0.1.0/cp-zookeeper-0.1.0.tgz
     version: 0.1.0
-generated: "2024-09-20T09:29:53.053626929Z"
+generated: "2024-10-18T12:34:50.912210977Z"
