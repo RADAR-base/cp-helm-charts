@@ -2,4 +2,4 @@ apiVersion: v2
 appVersion: "7.2.9"
 description: A Helm chart for Confluent Kafka on Kubernetes
 name: cp-kafka
-version: 0.3.4
+version: 0.3.5
