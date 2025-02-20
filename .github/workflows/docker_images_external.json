@@ -1,0 +1,10 @@
+{ "include": [
+  {"DOCKER_IMAGE": "docker.io/confluentinc/cp-enterprise-control-center:7.2.9"},
+  {"DOCKER_IMAGE": "docker.io/confluentinc/cp-kafka:7.2.9"},
+  {"DOCKER_IMAGE": "docker.io/confluentinc/cp-kafka-connect:7.2.9"},
+  {"DOCKER_IMAGE": "docker.io/confluentinc/cp-kafka-rest:7.2.9"},
+  {"DOCKER_IMAGE": "docker.io/confluentinc/cp-ksqldb-server:7.2.9"},
+  {"DOCKER_IMAGE": "docker.io/confluentinc/cp-schema-registry:7.2.9"},
+  {"DOCKER_IMAGE": "docker.io/confluentinc/cp-zookeeper:7.2.9"},
+  {"DOCKER_IMAGE": "docker.io/solsson/kafka-prometheus-jmx-exporter@sha256:6f82e2b0464f50da8104acd7363fb9b995001ddff77d248379f8788e78946143"}
+] }
