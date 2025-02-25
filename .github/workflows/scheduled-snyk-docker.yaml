@@ -70,9 +70,11 @@ jobs:
 
       # Detected vulnerabilities will appear on Github as Issues
       - name: Report new vulnerabilities
-        uses: thehyve/report-vulnerability@master
+        uses: thehyve/report-vulnerability@test
         if: success() || failure()
         with:
           report-file: snyk.json
+          timestamp: ${{ github.run_id }}
+          category: ${{ matrix.DOCKER_IMAGE }}
         env:
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
