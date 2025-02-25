@@ -75,6 +75,7 @@ jobs:
         with:
           report-file: snyk.json
           timestamp: ${{ github.run_id }}
-          category: ${{ matrix.DOCKER_IMAGE }}
+          # Long labels trigger an error on Github.
+          category: ${{ matrix.DOCKER_IMAGE_SHORT }}
         env:
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
