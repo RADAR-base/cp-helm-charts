@@ -56,7 +56,6 @@ jobs:
       matrix: ${{ fromJson(needs.docker-images.outputs.matrix) }}
     steps:
       - name: Run Snyk to check for vulnerabilities
-        continue-on-error: true # To make sure that SARIF upload gets called
         uses: snyk/actions/docker@master
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
@@ -67,11 +66,13 @@ jobs:
             --severity-threshold=high
             --policy-path=.snyk
             --org=radar-base
-            --sarif-file-output=snyk.sarif
+            --json=snyk.json
 
-      # Detected vulnerabilities will appear on Github in Security->Code_scanning_alerts tab
-      - name: Upload result to GitHub Code Scanning
-        uses: github/codeql-action/upload-sarif@v3
+      # Detected vulnerabilities will appear on Github as Issues
+      - name: Report new vulnerabilities
+        uses: thehyve/report-vulnerability@master
+        if: success() || failure()
         with:
-          category: ${{ matrix.DOCKER_IMAGE }}
-          sarif_file: snyk.sarif
+          report-file: snyk.json
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
