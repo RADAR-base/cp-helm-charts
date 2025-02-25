@@ -10,6 +10,21 @@ cleanup() {
   rm -f images.*
 }
 
+shorten_image_ref() {
+  ref=$1
+  # Get the sha256 hash from the image reference.
+  digest=$(echo $ref | grep -oP "(?<=sha256:).*")
+  # Keep the first 5 chars of the digest
+  digest=${digest:0:5}
+  # remove the repository from the image reference
+  short_name=$(echo $ref | sed -r 's/^[^\/]+\///')
+  # remove the digest from the image reference
+  short_name=$(echo $short_name | sed -r "s/(@sha256.*)//g")
+  # add the shortened digest when defined
+  [ -n "$digest" ] && short_name="$short_name:sha-$digest"
+  echo $short_name
+}
+
 cleanup
 
 # Collect images from internal and external charts.
@@ -41,7 +56,8 @@ fi
 # Generate the JSON array
 echo "{ \"include\": [" > $output_file
 while IFS= read -r line; do
-  echo "  {\"DOCKER_IMAGE\": \"$line\"}," >> $output_file
+  short_name=`shorten_image_ref $line`
+  echo "  {\"DOCKER_IMAGE\": \"$line\", \"DOCKER_IMAGE_SHORT\": \"$short_name\"}," >> $output_file
 done < images.txt
 sed -i '$ s/,$//' $output_file
 echo "] }" >> $output_file
