@@ -100,6 +100,13 @@ spec:
           - name: {{ printf "KSQL_%s" $key | replace "." "_" | upper | quote }}
             value: {{ $value | quote }}
           {{- end }}
+          {{- if .Values.secret.jaas.name }}
+          - name: KSQL_SASL_JAAS_CONFIG
+            valueFrom:
+              secretKeyRef:
+                name: {{ .Values.secret.jaas.name }}
+                key: {{ .Values.secret.jaas.key }}
+          {{- end }}
           {{- if .Values.jmx.port }}
           - name: JMX_PORT
             value: "{{ .Values.jmx.port }}"
