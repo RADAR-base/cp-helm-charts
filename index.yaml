@@ -201,6 +201,15 @@ entries:
   cp-ksql-server:
   - apiVersion: v2
     appVersion: 7.6.0
+    created: "2025-03-28T09:26:47.654973179Z"
+    description: A Helm chart for Confluent KSQL Server on Kubernetes
+    digest: 682b2a9a38c6b0959980ea6f29e0bec76ce67fc71f6a65308ee1d890af54370e
+    name: cp-ksql-server
+    urls:
+    - https://github.com/RADAR-base/cp-helm-charts/releases/download/cp-ksql-server-0.4.1/cp-ksql-server-0.4.1.tgz
+    version: 0.4.1
+  - apiVersion: v2
+    appVersion: 7.6.0
     created: "2025-02-26T08:38:42.63480141Z"
     description: A Helm chart for Confluent KSQL Server on Kubernetes
     digest: 5a4ad5bc25026dafd375299b3313d5a732645bcaef0dfcaa4c8ccfb3889a5cb8
@@ -390,4 +399,4 @@ entries:
     urls:
     - https://github.com/RADAR-base/cp-helm-charts/releases/download/cp-zookeeper-0.1.0/cp-zookeeper-0.1.0.tgz
     version: 0.1.0
-generated: "2025-02-26T08:38:42.873424998Z"
+generated: "2025-03-28T09:26:47.655059981Z"
