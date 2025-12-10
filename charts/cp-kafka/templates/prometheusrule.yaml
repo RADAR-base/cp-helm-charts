@@ -23,14 +23,14 @@ spec:
     - alert: KafkaUnderReplicatedPartitions
       annotations:
         message: {{` "etcd cluster \"{{ $labels.job }}\": member {{ $labels.instance }} has no leader." `}}
-      expr: count(cp_kafka_server_replicamanager_underreplicatedpartitions) > 1
+      expr: sum(cp_kafka_server_replicamanager_underreplicatedpartitions) > 1
       for: 5m
       labels:
         severity: critical
     - alert: KafkaPartitionsOffline
       annotations:
         message: {{` "etcd cluster \"{{ $labels.job }}\": member {{ $labels.instance }} has no leader." `}}
-      expr: count(cp_kafka_controller_kafkacontroller_offlinepartitionscount) > 1
+      expr: sum(cp_kafka_controller_kafkacontroller_offlinepartitionscount) > 1
       for: 5m
       labels:
         severity: critical
